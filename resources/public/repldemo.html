@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>REPL Demo</title>
+    </head>
+    <body>
+        <h1>REPL Demo</h1>
+        <hr>
+        This page is meant to be accessed by running this in one terminal:
+        <pre>lein ring server-headless 3000</pre>
+        And then this in a different terminal:
+        <pre>lein trampoline cljsbuild repl-launch firefox http://localhost:3000/repl-demo</pre>
+        <hr>Alternately, you can run:
+        <pre>lein ring server-headless 3000 &amp; lein trampoline cljsbuild repl-listen</pre>
+        And then browse to this page manually.
+
+        <hr>
+        <h2 id="fun">Try some fun REPL commands!</h2>
+        <pre>
+            > (js/alert "Hello!")
+            > (load-namespace 'goog.date.Date)
+            > (js/alert (goog.date.Date.))
+            > (.log js/console (reduce + [1 2 3 4 5]))
+            > (load-namespace 'goog.dom)
+            > (goog.dom.setTextContent (goog.dom.getElement "fun") "I changed something....")
+        </pre>
+        <script src="/js/main-debug.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            com.jittakal.repl.connect();
+        </script>
+    </body>
+</html>
