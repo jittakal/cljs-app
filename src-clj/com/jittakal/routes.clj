@@ -3,7 +3,7 @@
   (:require [compojure.route :as route]
             [compojure.handler :as handler]
             [ring.util.response :as resp]
-            [hiccup.middleware :only (wrap-base-url)]))
+            [hiccup.middleware :as hm :only (wrap-base-url)]))
 
 (defroutes main-routes
   (GET "/" [] (resp/resource-response "index.html" {:root "public"}))
@@ -13,4 +13,4 @@
 
 (def app
   (-> (handler/site main-routes)
-      (wrap-base-url)))
+      (hm/wrap-base-url)))

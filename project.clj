@@ -59,6 +59,7 @@
        :compiler {:output-to "resources/public/js/main-debug.js"
                   :optimizations :whitespace
                   :pretty-print true}}
+                  ;:source-map "resources/public/js/main-debug.js.map"}}
       ; This build has the highest level of optimizations, so it is
       ; efficient when running the app in production.
       :prod
@@ -74,4 +75,5 @@
        :compiler {:output-to "resources/private/js/unit-test.js"
                   :optimizations :whitespace
                   :pretty-print true}}}}
+                  ;:source-map "resources/private/js/unit-test.js.map"}}}}
   :ring {:handler com.jittakal.routes/app})

@@ -1,9 +1,27 @@
 (ns com.jittakal.core
-  (:require
-    [com.jittakal.crossover.shared :as shared]))
+  (:require [enfocus.core :as ef]
+            [enfocus.effects :as effects]
+            [enfocus.events :as ev])
+  (:require-macros [enfocus.macros :as em]))
 
-(defn ^:export say-hello []
-  (js/alert (shared/make-example-text)))
+(em/deftemplate home "templates/home.html" [])
 
-(defn add-some-numbers [& numbers]
-  (apply + numbers))
+(em/defaction home-page []
+              "#content-pane" (ef/do->
+                          (ef/content (home))))
+
+(em/deftemplate about "templates/about.html" [])
+
+(em/defaction about-page []
+              "#content-pane" (ef/do->
+                          (ef/content (about))))
+
+(em/defaction setup-app []
+              "#home" (ev/listen
+                       :click
+                       #(home-page))
+              "#about" (ev/listen
+                        :click
+                        #(about-page)))
+
+(set! (.-onload js/window) (setup-app))

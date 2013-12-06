@@ -1,15 +1,55 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta content="text/html; charset=ISO-8859-1" http-equiv="Content-Type">
         <title>ClojureScript</title>
+
+        <link type="text/css" rel="stylesheet" media="all" href="./lib/bootstrap/303/css/bootstrap.min.css">
     </head>
     <body>
-        <h1>Hello from the shared code</h1>
+        <!-- Top Navigation Bar -->
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="navbar-header">
+                <a class="navbar-brand">ClojureScript</a>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-left">
+                    <li><a href="#" class="active" id="home">Home</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#" id="about">About</a></li>
+                </ul>
+            </div>
+        </nav>
+        <!-- /Top Navigation Bar -->
+
+        <!-- Main container -->
+        <div class="container">
+            <div id="content-pane">
+                <div id="home-page">
+                    <div class="row">
+                        <div class="col-md-12">
+                            Welcome to Sample ClojureScript Application.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Main container -->
+
+        <script src="./lib/jquery.min.js"></script>
+        <script src="./lib/bootstrap/303/js/bootstrap.js"></script>
         <script src="/js/main-debug.js" type="text/javascript"></script>
+
         <script type="text/javascript">
-            com.jittakal.hello.say_hello()
+            $(function(){
+                //add function for onload
+            });
         </script>
     </body>
+
 </html>
+
+
 
 
