@@ -56,7 +56,7 @@
       :dev
       {:source-paths ["src-cljs"]
        :jar true
-       :compiler {:output-to "resources/public/js/main-debug.js"
+       :compiler {:output-to "resources/public/cljs/main-debug.js"
                   :optimizations :whitespace
                   :pretty-print true}}
                   ;:source-map "resources/public/js/main-debug.js.map"}}
@@ -64,7 +64,7 @@
       ; efficient when running the app in production.
       :prod
       {:source-paths ["src-cljs"]
-       :compiler {:output-to "resources/public/js/main.js"
+       :compiler {:output-to "resources/public/cljs/main.js"
                   :optimizations :advanced
                   :pretty-print false}}
       ; This build is for the ClojureScript unit tests that will
@@ -72,8 +72,9 @@
       ; for details on how it's run.
       :test
       {:source-paths ["src-cljs" "test-cljs"]
-       :compiler {:output-to "resources/private/js/unit-test.js"
+       :compiler {:output-to "resources/private/cljs/unit-test.js"
                   :optimizations :whitespace
                   :pretty-print true}}}}
                   ;:source-map "resources/private/js/unit-test.js.map"}}}}
   :ring {:handler com.jittakal.routes/app})
+
